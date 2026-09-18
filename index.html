@@ -85,6 +85,19 @@ nav .in{max-width:1180px;margin:0 auto;padding:18px 28px;display:flex;align-item
 /* personas */
 .personas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}.per{padding:0;overflow:hidden;display:flex;flex-direction:column}.per .ph{aspect-ratio:4/5;background-size:cover;background-position:center;filter:saturate(.9)}
 .per .b{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}.per .b .go{margin-top:auto;padding-top:16px}.per .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}.per p{margin:0;font-size:15px;color:var(--mut)}.per p b{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
+.fit{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:20px;align-items:stretch}
+.fit .card{padding:30px 32px 32px}.fit .card:hover{transform:none}
+.fit h4{margin:0 0 20px;font-family:Archivo,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.fit li{display:flex;gap:13px;font-size:15.5px;line-height:1.5;text-wrap:pretty}
+.fit li::before{content:"";flex:0 0 22px;height:22px;border-radius:50%;margin-top:1px;background-position:center;background-repeat:no-repeat}
+.fit .yes{border-color:rgba(57,217,138,.3);background:linear-gradient(160deg,rgba(57,217,138,.1),rgba(57,217,138,.02) 55%),var(--r)}
+.fit .yes li{color:var(--ink)}
+.fit .yes li::before{background-color:rgba(57,217,138,.16);background-size:12px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2339D98A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>')}
+.fit .no{background:rgba(255,255,255,.015);display:flex;flex-direction:column}.fit .no ul{margin-bottom:24px}.fit .alt{margin:auto 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--mut)}.fit .alt a{color:var(--acc);font-weight:600;white-space:nowrap}.fit .alt a::after{content:' →'}
+.fit .no h4{color:var(--mut)}.fit .no li{color:var(--mut)}
+.fit .no li::before{background-color:rgba(255,255,255,.05);background-size:10px;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236F7C75" stroke-width="3" stroke-linecap="round"><path d="M6 12h12"/></svg>')}
+@media(max-width:900px){.fit{grid-template-columns:1fr}.fit .card{padding:26px 22px 28px}}
 .notfor{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}.notfor .card{padding:26px 30px}.notfor ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}.notfor li{display:flex;gap:12px;color:var(--mut);font-size:15.5px}.notfor li::before{content:"×";color:var(--sig);font-weight:700;flex:0 0 14px}
 .avail{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:9px 16px;border-radius:999px;border:1px solid rgba(242,102,79,.4);background:rgba(242,102,79,.08);color:var(--ink);font-weight:600;font-size:15px}.avail i{width:8px;height:8px;border-radius:50%;background:var(--sig);box-shadow:0 0 10px var(--sig);animation:blink 1.6s infinite}
 .note{font-size:13.5px;color:var(--faint);border-left:2px solid var(--sig);padding:10px 14px;margin-top:22px;background:rgba(242,102,79,.06);border-radius:0 8px 8px 0}.note b{color:var(--mut)}
@@ -103,6 +116,31 @@ nav .in{max-width:1180px;margin:0 auto;padding:18px 28px;display:flex;align-item
 .tier .amt{font-size:clamp(52px,5.5vw,72px);line-height:.95;display:flex;align-items:baseline;gap:12px}.tier .amt small{font-family:"IBM Plex Sans",sans-serif;font-size:17px;font-weight:500;letter-spacing:0;color:var(--mut)}.tier .per{color:var(--mut);font-size:14.5px;margin-top:10px}
 .tier ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:11px;flex:1}.tier li{display:flex;gap:12px;font-size:15.5px}.tier li::before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:rgba(57,217,138,.15) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2339D98A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>') center/11px no-repeat;margin-top:3px}
 .badge{position:absolute;top:-14px;left:36px;background:var(--acc);color:#06130D;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+/* launch offer card (#buy) */
+.offer{max-width:600px;margin:52px auto 0;position:relative;border-radius:28px;padding:1.5px;background:linear-gradient(160deg,rgba(57,217,138,.8),rgba(57,217,138,.1) 38%,rgba(57,217,138,.08) 62%,rgba(242,102,79,.45));box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 100px rgba(57,217,138,.12)}
+.offer>.in{border-radius:27px;background:linear-gradient(180deg,#14221B 0%,#0D1611 100%);padding:40px 44px 34px;text-align:center}
+.offer .flag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(242,102,79,.12);border:1px solid rgba(242,102,79,.45);color:#FFD6CC;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.offer .flag i{width:8px;height:8px;border-radius:50%;background:var(--sig);box-shadow:0 0 10px var(--sig);animation:blink 1.6s infinite}
+.cd{display:flex;justify-content:center;gap:10px;margin:18px 0 0}
+.cd>div{min-width:76px;padding:13px 8px 10px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line2)}
+.cd b{display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:34px;line-height:1;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.cd span{display:block;margin-top:7px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.offer .price{display:flex;align-items:center;justify-content:center;gap:14px 18px;flex-wrap:wrap;margin:32px 0 10px}
+.offer .was{font-family:Archivo,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.02em;color:var(--faint);text-decoration:line-through;text-decoration-color:rgba(242,102,79,.8);text-decoration-thickness:2px}
+.offer .now{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(64px,8vw,92px);line-height:.9;letter-spacing:-.045em;color:#fff}
+.offer .save{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#06130D;background:var(--acc);padding:7px 12px;border-radius:999px;box-shadow:0 6px 24px rgba(57,217,138,.35)}
+.offer .sub{color:var(--mut);font-size:15px;margin:6px 0 28px}
+.offer ul{list-style:none;padding:26px 0 0;margin:0 auto 30px;max-width:440px;text-align:left;display:grid;gap:13px;border-top:1px solid var(--line)}
+.offer li{display:flex;gap:12px;font-size:15.5px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.offer li::before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:rgba(57,217,138,.15) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2339D98A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>') center/11px no-repeat;margin-top:3px}
+.offer .btn{width:100%}
+.offer .after{margin:16px 0 0;font-size:14px;color:var(--mut)}.offer .after b{color:#FFD6CC;font-weight:600}
+@media(max-width:640px){.offer .flag{font-size:10px;letter-spacing:.1em;padding:8px 13px;gap:8px;white-space:nowrap}.offer .was{order:1}.offer .save{order:2}.offer .now{order:3;flex-basis:100%}.offer .price{gap:10px 12px}.offer{margin-top:40px}.offer>.in{padding:30px 20px 26px}.cd{gap:7px}.cd>div{flex:1;min-width:0;padding:11px 4px 9px}.cd b{font-size:27px}.cd span{font-size:9px;letter-spacing:.12em}.offer .now{font-size:68px}.offer .was{font-size:21px}.offer .price{margin-top:26px}.offer li{font-size:15px}}
+#buy h2{margin-bottom:18px}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 30px;margin:26px auto 0;font-size:14px;color:var(--mut)}
+.trust>div{display:flex;align-items:center;gap:10px}
+.trust i{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(57,217,138,.1);color:var(--acc)}.trust svg{width:16px;height:16px}
+@media(max-width:640px){.trust{display:grid;justify-content:center;gap:10px}}
 .guar{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;padding:30px 36px}.guar .ico{width:64px;height:64px;border-radius:50%;border:2px solid var(--acc);display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:800;color:var(--acc);font-size:15px}.guar p{color:var(--mut);margin:6px 0 0;font-size:15.5px}
 /* form */
 .form{display:grid;gap:18px}.fld{display:grid;gap:8px}.fld label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
@@ -240,7 +278,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="page" id="p-playbook"><div class="hero"><div class="img i-dome-wide" style="background-position:50% 30%"></div><div class="img mob i-hero-mobile" style="display:none"></div><div class="scrim"></div><div class="in c"><div class="hr"><div class="spx"></div><div><div class="pill rv" style="--i:0"><span class="av"><i class="i-semipro"></i><i class="i-clinic"></i><i class="i-newgrad"></i><i class="i-student"></i></span><span><b>53,000+</b> physios &amp; students follow along</span></div>
 <div><div class="eb rv" style="--i:1">The Sports Physio Career Playbook</div></div><h1 class="rv" style="--i:2">I wanted to become a sports physio. I just had no idea how to get there.</h1>
 <p class="lede rv" style="--i:3;margin-top:26px">This is the guide I wish I'd had — getting experience when you have none, building a CV clubs actually read, and the interview questions that decide it.</p>
-<div class="cta-row rv" style="--i:4"><a class="btn lg" href="#buy">Get the Playbook — £29.99</a></div><p class="reassure rv" style="--i:5">Instant download · <b>one payment, no subscription</b></p>
+<div class="cta-row rv" style="--i:4"><a class="btn lg" href="#buy">Get the Playbook — £29.99</a></div><p class="reassure rv" style="--i:5"><span class="avail lp-only" style="margin-top:4px"><i></i>Launch price £29.99 · ends 30 September</span><span class="lp-after" hidden>Instant download · <b>one payment, no subscription</b></span></p>
 <div class="creds rv" style="--i:6"><span>Eight chapters</span><span>60 pages</span><span>Written from the hiring side</span><span>MSc · HCPC · ITMMiF</span></div></div></div></div></div><div class="proof"><div class="g">
 <div class="rv"><b class="num">53,000+</b><small>followers across Instagram &amp; TikTok</small></div>
 <div class="rv" style="--i:1"><b class="num">450,000+</b><small>people saw his work in three months</small></div>
@@ -317,13 +355,17 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="ctaline rv"><a class="btn lg" href="#buy">Get the Playbook</a><small>Instant download · one payment</small></div>
 </div></section>
 <section class="center" id="buy"><div class="glow"><i style="left:50%;top:50%;transform:translate(-50%,-50%)"></i></div><div class="c">
-<div class="eb rv">Get it</div><h2 class="rv" style="max-width:14ch">The Career Playbook.</h2><p class="lede rv">£29.99 until 30 September, then £39.99. One payment, and it doesn't expire.</p>
-<div class="tiers" style="grid-template-columns:minmax(300px,560px);justify-content:center;text-align:left">
-<div class="card tier feat rv"><span class="badge">Launch price</span><span class="tag">One payment</span><div class="amt num">£29.99<small style="text-decoration:line-through;color:var(--faint)">£39.99</small></div><div class="per">launch price until 30 September · one payment, instant download</div>
+<div class="eb rv" data-after="Get it">Launch offer</div><h2 class="rv" style="max-width:15ch">Get the Career Playbook.</h2><p class="lede rv">Sixty pages on getting experience, your CV, applications and the interview, in the order you'll need them.</p>
+<div class="offer rv"><div class="in">
+<div class="flag lp-only"><i></i>Launch price ends 30 September</div>
+<div class="cd lp-only" role="timer" aria-label="Time left at the launch price"><div><b id="cd-d">12</b><span>days</span></div><div><b id="cd-h">13</b><span>hours</span></div><div><b id="cd-m">30</b><span>mins</span></div><div><b id="cd-s">00</b><span>secs</span></div></div>
+<div class="price"><span class="was lp-only" aria-label="Full price £39.99">£39.99</span><span class="now">£29.99</span><span class="save lp-only">Save £10</span></div>
+<p class="sub">One payment · yours to keep</p>
 <ul><li>Eight chapters, 60 pages</li><li>Ten interview questions to prepare for, and how to answer clinical ones</li><li>A worked cover letter, built from a realistic job advert</li><li>What I look for in a CV, and the 10-second test</li><li>An experience gap check, opportunity tracker and interview checklist</li></ul>
-<a class="btn lg" href="#">Buy the Playbook</a></div></div>
-<div class="card guar rv" style="text-align:left;max-width:800px;margin-left:auto;margin-right:auto"><div class="ico">∞</div><div><h4>One payment. Yours to keep.</h4><p>Instant download, no subscription and nothing else to buy inside the book. Read it on your phone or print the worksheets.</p></div></div>
-<div class="note" style="max-width:800px;margin:22px auto 0;text-align:left"><b>Build note:</b> Stripe link for the Playbook still to be created — the 1:1 links already exist. Needs an automatic delivery email with a secure download link.</div>
+<a class="btn lg" href="#">Get the Playbook — £29.99</a>
+<p class="after lp-only">The price goes up to <b>£39.99</b> on 1 October.</p>
+</div></div>
+<div class="trust rv"><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg></i>Instant PDF download</div><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg></i>Read on your phone or print it</div><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.8-7 9.5-4.1-1.7-7-5.2-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></i>No subscription, nothing else to buy</div></div>
 </div></section>
 <section class="raised"><div class="c"><div class="eb rv">Who this is for</div><h2 class="rv" style="max-width:15ch">Four different points on the same road.</h2><div class="personas">
 <div class="card per rv" style="--i:0"><div class="ph i-student"></div><div class="b"><span class="tag">The student</span><p><b>You're here</b>Second or third year. Doing well on placement. No idea how any of it turns into a job in sport.</p><p><b>The Playbook</b>Chapters 1–3: what the career looks like, the sporting environment, and how to get experience with none.</p></div></div>
@@ -331,8 +373,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="card per rv" style="--i:2"><div class="ph i-clinic"></div><div class="b"><span class="tag">The clinician</span><p><b>You're here</b>Two to five years in private practice or the NHS. Good at the job. Sport keeps pulling.</p><p><b>The Playbook</b>Chapters 2 and 6: how sporting environments differ, and CPD that actually matters.</p></div></div>
 <div class="card per rv" style="--i:3"><div class="ph i-semipro"></div><div class="b"><span class="tag">Already in sport</span><p><b>You're here</b>Saturday pitch-side at semi-pro or grassroots. Wanting the next level and unsure what it takes.</p><p><b>The Playbook</b>Chapters 6–8: targeted CPD, the interview, and a plan for your next step.</p></div></div>
 </div>
-<div class="note"><b>Placeholder photography:</b> the four people above are AI-generated stand-ins so the layout can be judged now. They are replaced by real client photos and never paired with a quote or a name.</div>
-<div class="notfor"><div><p class="lede">It's a plan for getting in — written for people who don't have one yet.</p></div><div class="card"><h4>Not a good fit</h4><ul><li>You want a guaranteed route into professional football</li><li>You're already established in elite sport</li><li>You want clinical protocols or rehab programming</li><li>You want someone to make introductions for you</li></ul></div></div>
+<div class="fit"><div class="card yes rv"><h4>A good fit</h4><ul><li>You're a physiotherapy student, newly qualified, or an aspiring sports physio</li><li>You want to know what clubs look for before you apply</li><li>You're sending applications and want to know why some get ignored</li><li>You want a plan you can work through at your own pace</li></ul></div><div class="card no rv" style="--i:1"><h4>Not the right fit</h4><ul><li>You're already established in elite sport</li><li>You're looking for rehab protocols or a clinical manual</li></ul><p class="alt">Want advice on your own situation? <a href='#/mentorship'>Book a 1:1 session</a></p></div></div>
 </div></section>
 <section><div class="c"><div class="eb rv">Why I wrote it</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig" style="grid-template-columns:1fr 1fr;text-align:left;margin-top:44px">
 <div class="card rv" style="--i:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Academy football</span><h4 style="margin-top:12px">Premier League academies</h4><p>Academy physiotherapist working with youth players, covering matchday, assessment and rehabilitation. HCPC registered and covered by professional liability insurance.</p></div>
@@ -349,11 +390,11 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="por i-portrait rv"></div>
 </div></div></section>
 <section class="raised"><div class="c"><div class="eb rv">Questions</div><h2 class="rv">Before you buy.</h2><div class="faq"><div>
-<details><summary>Will this get me a job?</summary><p>No. Nobody can promise that. What it will do is show you what clubs look for, why applications get ignored, and what to do differently.</p></details>
+<details><summary>Will this get me a job?</summary><p>No book can promise that. What it will do is show you what clubs look for, why some applications get ignored, and exactly what to do differently.</p></details>
 <details><summary>I'm not in the UK. Is it still useful?</summary><p>The principles travel — getting experience, CVs, applications, interviews, choosing CPD. The specifics on registration and pitch-side qualifications are UK-focused.</p></details>
 <details><summary>I'm a first-year student. Too early?</summary><p>No — it's the best time. Most of what holds students back is not knowing what to prioritise, and that's easier to fix early than late.</p></details></div>
 <div><details><summary>What format is it?</summary><p>A PDF you download immediately after buying. Read it on anything, print it if you want.</p></details>
-<details><summary>Is there a refund?</summary><p>No — it's an instant download, so you get the whole thing the moment you buy. That's why this page tells you plainly what's in it and what isn't.</p></details></div></div></div></section>
+<details><summary>Is there a refund?</summary><p>Because it's an instant download, you get the whole book the moment you buy, so sales are final. That's why this page shows you exactly what's inside before you decide.</p></details></div></div></div></section>
 <div class="final"><div class="img i-wide"></div><div class="scrim"></div><div class="in c rv"><div class="eb">Get the Playbook</div><h2>Eight chapters. Instant download. One payment.</h2><div class="ctaline" style="margin-top:36px"><a class="btn lg" href="#buy">Get it — £29.99</a></div></div></div>
 </div>
 <div class="page" id="p-mentorship"><div class="hero"><div class="img i-hero-wide" style="background-position:0% 50%"></div><div class="img mob i-hero-mobile" style="display:none"></div><div class="scrim"></div><div class="in c"><div class="pill rv" style="--i:0"><span class="av"><i class="i-semipro"></i><i class="i-clinic"></i><i class="i-newgrad"></i><i class="i-student"></i></span><span><b>53,000+</b> physios &amp; students follow along</span></div>
@@ -424,8 +465,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="card per rv" style="--i:2"><div class="ph i-clinic"></div><div class="b"><span class="tag">The clinician</span><p><b>You're here</b>Two to five years in private practice or the NHS. Good at the job. Sport keeps pulling.</p><p><b>The hour</b>How your experience translates, what's genuinely missing, and a realistic route across.</p></div></div>
 <div class="card per rv" style="--i:3"><div class="ph i-semipro"></div><div class="b"><span class="tag">Already in sport</span><p><b>You're here</b>Saturday pitch-side at semi-pro or grassroots. Wanting the next level and unsure what it takes.</p><p><b>The hour</b>Pitch-side decisions, return-to-play calls, and being the physio a club wants to keep.</p></div></div>
 </div>
-<div class="note"><b>Placeholder photography:</b> the four people above are AI-generated stand-ins so the layout can be judged now. They are replaced by real client photos and never paired with a quote or a name.</div>
-<div class="notfor"><div><p class="lede"><b style='color:var(--ink)'>To be clear:</b> I can't get anyone a job, and I won't pretend otherwise. What I can do is tell you honestly where you are, what's missing, and what I'd do next if I were you.</p></div><div class="card"><h4>Not a good fit</h4><ul><li>You want me to get you a job or introduce you to a club</li><li>You want treatment for your own injury</li><li>You want a guaranteed route into professional football</li><li>You need accredited pitch-side trauma training</li></ul></div></div>
+<div class="fit"><div class="card yes rv"><h4>A good fit</h4><ul><li>You want an honest read on where you are right now</li><li>You're applying for roles in sport and not hearing back</li><li>You've got an interview coming up and want to prepare properly</li><li>You want a clear plan for the next 30 days, written down for you after the call</li></ul></div><div class="card no rv" style="--i:1"><h4>Not the right fit</h4><ul><li>You're looking for a job placement or an introduction to a club</li><li>You need treatment for an injury of your own</li></ul><p class="alt">Not sure yet? Start with the <a href='#/roadmap'>free Career Roadmap</a></p></div></div>
 </div></section>
 <section class="raised center" id="book"><div class="glow"><i style="left:50%;bottom:-400px;transform:translateX(-50%)"></i></div><div class="c">
 <div class="eb rv">Book a session</div><h2 class="rv" style="max-width:14ch">Two ways to do this.</h2><p class="lede rv">One session if you want a straight answer. Three if you want to actually change something.</p><div class="avail rv"><i></i><span class="slots">3 slots left this month</span></div>
@@ -455,11 +495,11 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="por i-portrait rv"></div>
 </div></div></section>
 <section><div class="c"><div class="eb rv">Questions</div><h2 class="rv">Before you book.</h2><div class="faq"><div>
-<details><summary>Will this get me a job?</summary><p>No. Nobody can promise that, and you should be sceptical of anyone who does. What I can do is help you understand what clubs actually look for, where your gaps are, and what your realistic next step is.</p></details>
-<details><summary>Can you get me into a club, or introduce me to someone?</summary><p>No. I don't make introductions or pass CVs on. That wouldn't be fair on the people I work with, and it isn't what these sessions are.</p></details>
+<details><summary>Will this get me a job?</summary><p>No one can honestly promise that. What I can do is help you understand what clubs actually look for, where your gaps are, and what your realistic next step is.</p></details>
+<details><summary>Do you make introductions to clubs?</summary><p>I don't pass CVs on or make introductions, because that wouldn't be fair on the people I work with. The sessions are about getting you ready to make that approach yourself.</p></details>
 <details><summary>I'm a student with no experience. Is it worth it?</summary><p>Often it's the best time. Most of what holds students back is not knowing what to prioritise — and that's fixable in an hour.</p></details></div>
 <div><details><summary>I'm not in the UK. Does that matter?</summary><p>Sessions are online, so location isn't a problem. Registration, visa and qualification rules vary a lot by country, and I'll be honest about what I do and don't know about yours.</p></details>
-<details><summary>Can I get advice about my own injury?</summary><p>No. These are career and professional development sessions, not clinical consultations. If you're injured, see a physio in person.</p></details>
+<details><summary>Can I get advice about my own injury?</summary><p>These sessions are about your career rather than clinical care, so for an injury of your own it's best to see a physio in person.</p></details>
 <details><summary>What happens after I pay?</summary><p>You get a confirmation straight away, then a personal email from me within 24 hours to agree a date and time. Sessions currently run Fridays 9am–6pm and Saturdays 9am–1pm, UK time, usually within a week or two. You also answer a few short questions so I can prepare. If it turns out I'm not the right person to help you, I'll say so and refund you.</p></details></div></div></div></section>
 <div class="final"><div class="img i-wide"></div><div class="scrim"></div><div class="in c rv"><div class="eb">Ready?</div><h2>Sixty minutes, a written plan, and a full refund if it isn't worth it.</h2><div class="ctaline" style="margin-top:36px"><a class="btn lg" href="#book">Book a session</a></div></div></div>
 </div>
@@ -467,7 +507,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <section style="padding-top:150px"><div class="c two">
 <div class="stick"><div class="eb rv">Payment received</div><h2 class="rv" style="margin-bottom:18px">Thanks. Now tell me where you are.</h2><p class="lede rv">You'll get a receipt by email in a minute, and a personal email from me within 24 hours to agree a date and time. Sessions currently run Fridays 9am–6pm and Saturdays 9am–1pm, UK time.</p>
 <div class="rv" style="margin-top:22px"><div class="nl2"><div><i>1</i><div><b>I'll email you within 24 hours</b><span>To agree a date and time, and to send the Google Meet link. No calendar to wrestle with.</span></div></div><div><i>2</i><div><b>Answer these questions now</b><span>Two minutes. I read every answer before we meet, and the hour is built around them.</span></div></div></div></div>
-<div class="note"><b>Build note:</b> wire this form to Tally/Fillout so answers land in a Google Sheet, and set both Stripe links' after-payment redirect to this page (#/booked).</div></div>
+</div>
 <form class="form rv" onsubmit="event.preventDefault();this.querySelector('.done').hidden=false;">
 <div class="f2"><div class="fld"><label for="n">Full name</label><input id="n" required></div><div class="fld"><label for="e">Email</label><input id="e" type="email" required></div></div>
 <div class="f2"><div class="fld"><label for="ig">Instagram handle</label><input id="ig" placeholder="optional"></div><div class="fld"><label for="c">Country</label><input id="c" required></div></div>
@@ -487,6 +527,22 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="scope"><b>Scope of practice.</b> These guides and sessions are for career development and professional education. They are not clinical consultations, they do not provide treatment or diagnosis, and they are not a substitute for accredited pitch-side trauma training. Physio Ric is a HCPC-registered physiotherapist. Nothing here is a guarantee of employment, placement, or access to any club or organisation.<br><br>© 2026 Physio Ric · Privacy · Terms</div></div></footer>
 <script>
 var SLOTS_LEFT=3; // <- Ric updates this monthly; must match the real calendar
+var LAUNCH_END=Date.parse('2026-09-30T23:59:59+01:00'); // launch price ends 30 Sep, 23:59 UK time
+function lpFix(t){return t.replace(/£29\.99 until 30 Sep(tember)?,? then £39\.99/g,'£39.99').replace(/ until 30 Sep(tember)?/g,'').replace(/£29\.99/g,'£39.99')}
+function launchOver(){
+  document.querySelectorAll('.lp-only').forEach(function(e){e.hidden=true});
+  document.querySelectorAll('.lp-after').forEach(function(e){e.hidden=false});
+  document.querySelectorAll('[data-after]').forEach(function(e){e.textContent=e.getAttribute('data-after')});
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
+  while((n=w.nextNode())){if(n.nodeValue.indexOf('£29.99')>-1)n.nodeValue=lpFix(n.nodeValue)}
+  Object.keys(S).forEach(function(k){S[k]=S[k].map(lpFix)});
+}
+function launchTick(){
+  var ms=LAUNCH_END-Date.now();if(ms<=0){launchOver();return false}
+  var t=Math.floor(ms/1000),d=Math.floor(t/86400),h=Math.floor(t%86400/3600),m=Math.floor(t%3600/60),s=t%60;
+  var set=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v};
+  set('cd-d',d);set('cd-h',(h<10?'0':'')+h);set('cd-m',(m<10?'0':'')+m);set('cd-s',(s<10?'0':'')+s);return true;
+}
 var P={'#/':'p-home','#/roadmap':'p-roadmap','#/playbook':'p-playbook','#/mentorship':'p-mentorship','#/booked':'p-booked'};
 function slotsText(){var m=new Date().toLocaleString('en-GB',{month:'long'});return SLOTS_LEFT+(SLOTS_LEFT===1?' slot':' slots')+' left in '+m}
 document.querySelectorAll('.slots').forEach(function(e){e.textContent=slotsText()});
@@ -506,4 +562,5 @@ window.addEventListener('hashchange',route);route();
 function onScroll(){var y=window.scrollY;navEl.classList.toggle('solid',y>40);document.getElementById('sticky').classList.toggle('on',y>window.innerHeight*0.9);}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]:not([href^="#/"])');if(!a)return;var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}});
+if(launchTick()){var lpTimer=setInterval(function(){if(!launchTick())clearInterval(lpTimer)},1000)}
 </script>
