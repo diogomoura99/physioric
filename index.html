@@ -14,7 +14,7 @@
 
 <style>
 :root{--g:#070D0A;--s:#0D1611;--r:#13201A;--r2:#1A2A22;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--ink:#F1F4F0;--mut:#A9B5AE;--faint:#6F7C75;--acc:#39D98A;--acc2:#22C47A;--deep:#0E4A38;--sig:#F2664F;--chalk:#F3F3EF;--cink:#0B1712;--cmut:#5A6862;--cline:#D8DCD4;--star:#E8B54A}
-*{box-sizing:border-box}html{scroll-behavior:smooth}[hidden]{display:none!important}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{overflow-x:hidden}@supports(overflow:clip){body{overflow-x:clip}}[hidden]{display:none!important}
 body{margin:0;background:var(--g);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:17.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,video{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:Archivo,"Archivo Black",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;margin:0;text-wrap:balance}
@@ -60,7 +60,7 @@ nav .in{max-width:1180px;margin:0 auto;padding:18px 28px;display:flex;align-item
 .num{font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.proof .num{font-size:clamp(34px,3.4vw,46px);line-height:1;color:var(--ink);display:block}.proof small{display:block;font-size:14px;color:var(--mut);margin-top:8px}
 /* cards */
 .card{background:var(--r);border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}.card:hover{transform:translateY(-3px);border-color:rgba(57,217,138,.35)}
-.qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}.qc{display:flex;flex-direction:column;gap:20px}.qc p{font-family:Archivo,sans-serif;font-weight:700;font-size:19px;line-height:1.3;letter-spacing:-.02em;margin:0;flex:1}.qc p em{font-style:normal;color:var(--acc)}.qc .who{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}.ig.two{grid-template-columns:1fr 1fr}@media(max-width:640px){.ig.two{grid-template-columns:1fr}}.qgrid.two{grid-template-columns:repeat(2,1fr);max-width:880px;margin:44px auto 0;text-align:left}@media(max-width:640px){.qgrid.two{grid-template-columns:1fr}}.qc{display:flex;flex-direction:column;gap:20px}.qc p{font-family:Archivo,sans-serif;font-weight:700;font-size:19px;line-height:1.3;letter-spacing:-.02em;margin:0;flex:1}.qc p em{font-style:normal;color:var(--acc)}.qc .who{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 /* results */
 .results{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
 .res{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:34px;text-align:left}.res .shot{border-radius:14px;overflow:hidden;border:1px solid var(--line2);background-color:#fff;box-shadow:0 20px 50px rgba(0,0,0,.45);aspect-ratio:4/3;background-size:cover;background-position:center}
@@ -225,7 +225,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="card qc rv" style="--i:3"><div class="stars">★★★★★</div><p>“I feel much more prepared going through the interview questions and how to structure my answers.”</p><div class="who">Final-year student</div></div>
 </div>
 </div></section>
-<section><div class="c"><div class="eb rv">About</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig" style="grid-template-columns:1fr 1fr;text-align:left;margin-top:44px">
+<section><div class="c"><div class="eb rv">About</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig two" style="text-align:left;margin-top:44px">
 <div class="card rv" style="--i:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Academy football</span><h4 style="margin-top:12px">Premier League academies</h4><p>Academy physiotherapist working with youth players, covering matchday, assessment and rehabilitation. HCPC registered and covered by professional liability insurance.</p></div>
 <div class="card rv" style="--i:1"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Baller League UK</span><h4 style="margin-top:12px">Co-lead physiotherapist</h4><p>Matchday pitch-side assessment and management of injuries, pre-match assessment, treatment, taping and manual techniques, pre-activation work, liaising with the paramedics present at games, and making sure the emergency action plan is in place.</p></div>
 </div><div class="tl">
@@ -325,10 +325,9 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <section class="raised center"><div class="c">
 <div class="eb rv">What people say</div><h2 class="rv" style="max-width:15ch">From students and physios I've worked with.</h2>
 <p class="lede rv">The Playbook is the written version of what I take people through in a session. These are their words.</p>
-<div class="qgrid" style="grid-template-columns:repeat(3,1fr);margin-top:44px">
+<div class="qgrid two">
 <div class="card qc rv" style="--i:0"><div class="stars">★★★★★</div><p>“I feel more prepared and have a <em>clearer idea of the roadmap</em> moving forwards.”</p><div class="who">Newly qualified physio</div></div>
 <div class="card qc rv" style="--i:1"><div class="stars">★★★★★</div><p>“My dream is to become a sports physio, and it has given me a much better understanding of <em>how to actually become one.</em>”</p><div class="who">Physiotherapy student</div></div>
-<div class="card qc rv" style="--i:2"><div class="stars">★★★★★</div><p>“I feel much more prepared going through the interview questions and how to structure my answers.”</p><div class="who">Final-year student</div></div>
 </div>
 
 <div class="ctaline rv"><a class="btn lg" href="#buy">Get the Playbook</a><small>Instant download · one payment</small></div>
@@ -346,7 +345,7 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 </div></div>
 <div class="trust rv"><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg></i>Instant PDF download</div><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg></i>Read on your phone or print it</div><div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.8-7 9.5-4.1-1.7-7-5.2-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></i>No subscription, nothing else to buy</div></div>
 </div></section>
-<section><div class="c"><div class="eb rv">Why I wrote it</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig" style="grid-template-columns:1fr 1fr;text-align:left;margin-top:44px">
+<section><div class="c"><div class="eb rv">Why I wrote it</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig two" style="text-align:left;margin-top:44px">
 <div class="card rv" style="--i:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Academy football</span><h4 style="margin-top:12px">Premier League academies</h4><p>Academy physiotherapist working with youth players, covering matchday, assessment and rehabilitation. HCPC registered and covered by professional liability insurance.</p></div>
 <div class="card rv" style="--i:1"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Baller League UK</span><h4 style="margin-top:12px">Co-lead physiotherapist</h4><p>Matchday pitch-side assessment and management of injuries, pre-match assessment, treatment, taping and manual techniques, pre-activation work, liaising with the paramedics present at games, and making sure the emergency action plan is in place.</p></div>
 </div><div class="tl">
@@ -379,27 +378,6 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="rv" style="--i:2"><b class="num">1M+</b><small>likes on TikTok</small></div>
 <div class="rv" style="--i:3"><b class="num">2,300+</b><small>have already asked for guidance</small></div>
 </div></div>
-<section class="center"><div class="glow"><i style="left:50%;top:-300px;transform:translateX(-50%)"></i></div><div class="c">
-<div class="eb rv">Sound familiar?</div><h2 class="rv" style="max-width:16ch">These are real messages I get, most weeks.</h2>
-<div class="qgrid"><div class="card qc rv" style="--i:0"><p>“I am <em>so lost</em> right now when it comes to my career goal and how I want to get there.”</p><div class="who">Physiotherapy student</div></div><div class="card qc rv" style="--i:1"><p>“I'm sure you get a heap of messages like this, but — any advice for a new grad?”</p><div class="who">Newly qualified</div></div><div class="card qc rv" style="--i:2"><p>“I've been practising for almost two years. Any advice for <em>entering the sports setting?</em>”</p><div class="who">Clinic physio</div></div><div class="card qc rv" style="--i:3"><p>“It's my first session with a club and I'm <em>so nervous.</em>”</p><div class="who">Sports therapist</div></div></div>
-<p class="lede rv" style="margin-top:44px">You can't answer any of those in a DM. You can in an hour, if the hour is built around the person asking.</p>
-</div></section>
-<section class="raised center"><div class="c">
-<div class="eb rv">After a session</div><h2 class="rv" style="max-width:15ch">What people say when the hour's over.</h2>
-<p class="lede rv">Most people who book are nervous. They've never had a mentorship session and they're half-convinced they'll waste an hour. Here's what two of them wrote afterwards — screenshots, not paraphrases.</p>
-<div class="results">
-<div class="card res rv"><div class="shot i-dm1"></div><div><div class="stars">★★★★★</div><div class="big">“Glad I built the courage to approach you on this.”</div><p class="q">“I appreciate how you had a plan and structure going into the session, but after learning my background and answering my questions you really tailored it for me. Was a bit nervous at first since I've never had a mentorship session, but it was great.”</p><div class="who"><i class="i-client"></i>Kobe · 1:1 mentorship</div></div></div>
-<div class="card res rv" style="--i:1"><div class="shot i-dm2"></div><div><div class="stars">★★★★★</div><div class="big">“Will arrange another call next week.”</div><p class="q">“Thanks for your call today, was really helpful and a lot of important information that was very needed.”</p><div class="who">Adam · 1:1 mentorship</div></div></div>
-</div>
-<div class="qgrid" style="margin-top:16px">
-<div class="card qc rv" style="--i:0"><div class="stars">★★★★★</div><p>“I feel more prepared and have a <em>clearer idea of the roadmap</em> moving forwards.”</p><div class="who">Newly qualified physio</div></div>
-<div class="card qc rv" style="--i:1"><div class="stars">★★★★★</div><p>“The interview preparation was really valuable, especially going through different scenarios and <em>how to structure my answers.</em>”</p><div class="who">1:1 mentorship</div></div>
-<div class="card qc rv" style="--i:2"><div class="stars">★★★★★</div><p>“My dream is to become a sports physio, and it has given me a much better understanding of <em>how to actually become one.</em>”</p><div class="who">Physiotherapy student</div></div>
-<div class="card qc rv" style="--i:3"><div class="stars">★★★★★</div><p>“I feel much more prepared going through the interview questions and how to structure my answers.”</p><div class="who">Final-year student</div></div>
-</div>
-
-<div class="ctaline rv"><a class="btn lg" href="#book">Book a session</a><small>From £70 · <span class="slots">3 slots left this month</span></small></div>
-</div></section>
 <section><div class="c row">
 <div class="pic rv"><div class="phone"><div class="scr"><div class="reel-slot"><video id="reel" autoplay muted loop playsinline preload="auto" poster="media/799c8ac6eddc4a2e.jpg"><source src="media/bdf5fe01b51cfd7d.mp4" type="video/mp4"></video></div><div class="live"><i></i>Pitch-side · Baller League</div></div></div></div>
 <div class="txt"><div class="eb rv">What this is</div><h2 class="rv">Everything I know, applied to where you actually are.</h2>
@@ -439,6 +417,27 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 </div>
 <div class="fit"><div class="card yes rv"><h4>A good fit</h4><ul><li>You want an honest read on where you are right now</li><li>You're applying for roles in sport and not hearing back</li><li>You've got an interview coming up and want to prepare properly</li><li>You want a clear plan for the next 30 days, written down for you after the call</li></ul></div><div class="card no rv" style="--i:1"><h4>Not the right fit</h4><ul><li>You're looking for a job placement or an introduction to a club</li><li>You need treatment for an injury of your own</li></ul><p class="alt">Not sure yet? Start with the <a href='#/roadmap'>free Career Roadmap</a></p></div></div>
 </div></section>
+<section class="center"><div class="glow"><i style="left:50%;top:-300px;transform:translateX(-50%)"></i></div><div class="c">
+<div class="eb rv">Sound familiar?</div><h2 class="rv" style="max-width:16ch">These are real messages I get, most weeks.</h2>
+<div class="qgrid"><div class="card qc rv" style="--i:0"><p>“I am <em>so lost</em> right now when it comes to my career goal and how I want to get there.”</p><div class="who">Physiotherapy student</div></div><div class="card qc rv" style="--i:1"><p>“I'm sure you get a heap of messages like this, but — any advice for a new grad?”</p><div class="who">Newly qualified</div></div><div class="card qc rv" style="--i:2"><p>“I've been practising for almost two years. Any advice for <em>entering the sports setting?</em>”</p><div class="who">Clinic physio</div></div><div class="card qc rv" style="--i:3"><p>“It's my first session with a club and I'm <em>so nervous.</em>”</p><div class="who">Sports therapist</div></div></div>
+<p class="lede rv" style="margin-top:44px">You can't answer any of those in a DM. You can in an hour, if the hour is built around the person asking.</p>
+</div></section>
+<section class="raised center"><div class="c">
+<div class="eb rv">After a session</div><h2 class="rv" style="max-width:15ch">What people say when the hour's over.</h2>
+<p class="lede rv">Most people who book are nervous. They've never had a mentorship session and they're half-convinced they'll waste an hour. Here's what physiotherapy students and physios wrote afterwards — screenshots, not paraphrases.</p>
+<div class="results">
+<div class="card res rv"><div class="shot i-dm1"></div><div><div class="stars">★★★★★</div><div class="big">“Glad I built the courage to approach you on this.”</div><p class="q">“I appreciate how you had a plan and structure going into the session, but after learning my background and answering my questions you really tailored it for me. Was a bit nervous at first since I've never had a mentorship session, but it was great.”</p><div class="who"><i class="i-client"></i>Kobe · 1:1 mentorship</div></div></div>
+<div class="card res rv" style="--i:1"><div class="shot i-dm2"></div><div><div class="stars">★★★★★</div><div class="big">“Will arrange another call next week.”</div><p class="q">“Thanks for your call today, was really helpful and a lot of important information that was very needed.”</p><div class="who">Adam · 1:1 mentorship</div></div></div>
+</div>
+<div class="qgrid" style="margin-top:16px">
+<div class="card qc rv" style="--i:0"><div class="stars">★★★★★</div><p>“I feel more prepared and have a <em>clearer idea of the roadmap</em> moving forwards.”</p><div class="who">Newly qualified physio</div></div>
+<div class="card qc rv" style="--i:1"><div class="stars">★★★★★</div><p>“The interview preparation was really valuable, especially going through different scenarios and <em>how to structure my answers.</em>”</p><div class="who">1:1 mentorship</div></div>
+<div class="card qc rv" style="--i:2"><div class="stars">★★★★★</div><p>“My dream is to become a sports physio, and it has given me a much better understanding of <em>how to actually become one.</em>”</p><div class="who">Physiotherapy student</div></div>
+<div class="card qc rv" style="--i:3"><div class="stars">★★★★★</div><p>“I feel much more prepared going through the interview questions and how to structure my answers.”</p><div class="who">Final-year student</div></div>
+</div>
+
+<div class="ctaline rv"><a class="btn lg" href="#book">Book a session</a><small>From £70 · <span class="slots">3 slots left this month</span></small></div>
+</div></section>
 <section class="raised center" id="book"><div class="glow"><i style="left:50%;bottom:-400px;transform:translateX(-50%)"></i></div><div class="c">
 <div class="eb rv">Book a session</div><h2 class="rv" style="max-width:14ch">Two ways to do this.</h2><p class="lede rv">One session if you want a straight answer. Three if you want to actually change something.</p><div class="avail rv"><i></i><span class="slots">3 slots left this month</span></div>
 <div class="tiers" style="text-align:left">
@@ -449,10 +448,9 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <ul><li>Three 60-minute sessions</li><li>Work through career, pitch-side and rehab properly</li><li>An action plan and resource after each one</li><li>Enough time to actually change something</li></ul>
 <a class="btn" href="https://buy.stripe.com/bJe4gB5MJbls6MpdPabMQ02">Book three sessions</a></div>
 </div>
-<div class="card guar rv" style="text-align:left"><div class="ico">48h</div><div><h4>If the first session isn't worth it, you get your money back.</h4><p>Do session one. If it wasn't worth what you paid, reply to my email within 48 hours and I'll refund the whole thing — and you keep the resource. No form, no questions.</p></div></div>
-<p class="rv" style="margin-top:26px;font-size:15px;color:var(--mut)"><b style="color:var(--ink)">After you pay</b> I email you within 24 hours to agree a date and time that suits you, and you answer a few questions so the hour is built around you. Sessions currently run Fridays 9am–6pm and Saturdays 9am–1pm, UK time, and I cap how many I take each month.</p>
+<p class="rv" style="margin-top:26px;font-size:15px;color:var(--mut)"><b style="color:var(--ink)">After you pay</b> I email you within 24 hours to agree a date and time that suits you, and you answer a few questions so the hour is built around you. Sessions currently run Monday 9am–2pm, and Saturdays 9am–1pm, UK time, limited monthly slots available.</p>
 </div></section>
-<section class="raised"><div class="c"><div class="eb rv">About</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig" style="grid-template-columns:1fr 1fr;text-align:left;margin-top:44px">
+<section class="raised"><div class="c"><div class="eb rv">About</div><h2 class="rv">I'm Ric.</h2><p class="lede rv">A physiotherapist working in an MSK clinic alongside Baller League, with experience across amateur football, Premier League academies, and working with professional footballers.</p><div class="ig two" style="text-align:left;margin-top:44px">
 <div class="card rv" style="--i:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Academy football</span><h4 style="margin-top:12px">Premier League academies</h4><p>Academy physiotherapist working with youth players, covering matchday, assessment and rehabilitation. HCPC registered and covered by professional liability insurance.</p></div>
 <div class="card rv" style="--i:1"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)">Baller League UK</span><h4 style="margin-top:12px">Co-lead physiotherapist</h4><p>Matchday pitch-side assessment and management of injuries, pre-match assessment, treatment, taping and manual techniques, pre-activation work, liaising with the paramedics present at games, and making sure the emergency action plan is in place.</p></div>
 </div><div class="tl">
@@ -467,17 +465,18 @@ footer .scope{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);
 <div class="por i-portrait rv"></div>
 </div></div></section>
 <section><div class="c"><div class="eb rv">Questions</div><h2 class="rv">Before you book.</h2><div class="faq"><div>
+<details><summary>Who is 1:1 physio mentorship for?</summary><p>Physiotherapy students, new grad physios, aspiring sports clinicians, and sports physios who want to develop in MSK and sports physiotherapy.</p></details>
 <details><summary>Will this get me a job?</summary><p>No one can honestly promise that. What I can do is help you understand what clubs actually look for, where your gaps are, and what your realistic next step is.</p></details>
 <details><summary>Do you make introductions to clubs?</summary><p>I don't pass CVs on or make introductions, because that wouldn't be fair on the people I work with. The sessions are about getting you ready to make that approach yourself.</p></details>
 <details><summary>I'm a student with no experience. Is it worth it?</summary><p>Often it's the best time. Most of what holds students back is not knowing what to prioritise — and that's fixable in an hour.</p></details></div>
 <div><details><summary>I'm not in the UK. Does that matter?</summary><p>Sessions are online, so location isn't a problem. Registration, visa and qualification rules vary a lot by country, and I'll be honest about what I do and don't know about yours.</p></details>
 <details><summary>Can I get advice about my own injury?</summary><p>These sessions are about your career rather than clinical care, so for an injury of your own it's best to see a physio in person.</p></details>
-<details><summary>What happens after I pay?</summary><p>You get a confirmation straight away, then a personal email from me within 24 hours to agree a date and time. Sessions currently run Fridays 9am–6pm and Saturdays 9am–1pm, UK time, usually within a week or two. You also answer a few short questions so I can prepare. If it turns out I'm not the right person to help you, I'll say so and refund you.</p></details></div></div></div></section>
-<div class="final"><div class="img i-wide"></div><div class="scrim"></div><div class="in c rv"><div class="eb">Ready?</div><h2>Sixty minutes, a written plan, and a full refund if it isn't worth it.</h2><div class="ctaline" style="margin-top:36px"><a class="btn lg" href="#book">Book a session</a></div></div></div>
+<details><summary>What happens after I pay?</summary><p>You get a confirmation straight away, then a personal email from me within 24 hours to agree a date and time. Sessions currently run Monday 9am–2pm, and Saturdays 9am–1pm, UK time, limited monthly slots available. You also answer a few short questions so I can prepare.</p></details></div></div></div></section>
+<div class="final"><div class="img i-wide"></div><div class="scrim"></div><div class="in c rv"><div class="eb">Ready?</div><h2>Sixty minutes, and a written plan built around you.</h2><div class="ctaline" style="margin-top:36px"><a class="btn lg" href="#book">Book a session</a></div></div></div>
 </div>
 <div class="page" id="p-booked">
 <section style="padding-top:150px"><div class="c two">
-<div class="stick"><div class="eb rv">Payment received</div><h2 class="rv" style="margin-bottom:18px">Thanks. Now tell me where you are.</h2><p class="lede rv">You'll get a receipt by email in a minute, and a personal email from me within 24 hours to agree a date and time. Sessions currently run Fridays 9am–6pm and Saturdays 9am–1pm, UK time.</p>
+<div class="stick"><div class="eb rv">Payment received</div><h2 class="rv" style="margin-bottom:18px">Thanks. Now tell me where you are.</h2><p class="lede rv">You'll get a receipt by email in a minute, and a personal email from me within 24 hours to agree a date and time. Sessions currently run Monday 9am–2pm, and Saturdays 9am–1pm, UK time.</p>
 <div class="rv" style="margin-top:22px"><div class="nl2"><div><i>1</i><div><b>I'll email you within 24 hours</b><span>To agree a date and time, and to send the Google Meet link. No calendar to wrestle with.</span></div></div><div><i>2</i><div><b>Answer these questions now</b><span>Two minutes. I read every answer before we meet, and the hour is built around them.</span></div></div></div></div>
 </div>
 <form class="form rv" onsubmit="event.preventDefault();this.querySelector('.done').hidden=false;">
